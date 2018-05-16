@@ -15,6 +15,7 @@ const Header = () => {
       <tbody>
         <tr>
           <td>Review your portfolio</td>
+          <td></td>
           <td>You can always change this later.</td>
         </tr>
       </tbody>

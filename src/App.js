@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import Header from "../src/Header";
-import RiskLevel from "../src/RiskLevel";
+import Header from "../src/component/Header";
+import RiskLevel from "../src/component/RiskLevel";
+import Allocation from "../src/component/Allocation";
+import Composition from "../src/component/Composition";
 import "./App.css";
 
 class App extends Component {
@@ -31,11 +33,12 @@ class App extends Component {
           return data.json();
         })
         .then(data => {
-          console.log(data)
-          await this.setState({ portfolio: data });
+          console.log(data);
+          const obj = JSON.parse(data.json);
+          this.setState({ portfolio: obj.response.customer });
         });
     } catch (err) {
-      throw err;
+      return Promise.reject(err);
     }
   }
 
@@ -46,21 +49,32 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {this.state.portfolio.map((pf_type, i) => {
-          console.log(pf_type);
+        {this.state.portfolio.map((element, i) => {
+          console.log(element);
           return (
             <div>
               <RiskLevel
                 key={i}
-                type={pf_type.type}
-                returns={pf_type.returns}
-                risk={pf_type.VaR}
-                optimized={pf_type.optimized}
+                type={element.type}
+                returns={element.returns}
+                risk={element.VaR}
+                optimized={element.optimized}
               />
             </div>
           );
         })}
-        {this.state.portfolio}
+        {this.state.portfolio.map((element, i) => {
+          return (
+            <div>
+              <Composition key={i} currency={element.currency_exposure} />
+            </div>
+          );
+        })}
+        {this.state.portfolio.map((element, i) => {
+          return <div>
+              <Allocation key={i} Total={element.Total} Dividends={element.Dividends} Small_cap={element.Small_cap_growth} Mid_cap={element.Mid_cap_value} Convertible={element.Convertible_bonds} Asia={element.Asia_ex_japan} China={element.China_equities} US={element.US_total_stock} Bonds={element.Bonds}/>
+            </div>;
+        })}
       </div>
     );
   }
