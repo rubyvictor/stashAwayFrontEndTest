@@ -1,0 +1,48 @@
+.allocation_wrapper{
+    width: auto;
+  background: white;
+  padding: 25px;
+  margin: 25px;
+}
+
+.allocation_header{
+display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: #002243;
+  font-size: 0.5em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.allocation_container{
+    display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  font-size:0.5em;
+  line-height:40px;
+  vertical-align: middle;
+  text-align: center;
+  padding-left: 20px
+}
+
+.allocation_container > .us_equities_header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: lightgrey;
+    line-height: 40px;
+    vertical-align: middle;
+    padding-left: 0px
+}
+.Int_equities_header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: lightgrey;
+}
+.Int_bonds_header{
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background: lightgrey;
+}
+
+.ticker_usa{
+    text-align: center;
+}

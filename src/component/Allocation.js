@@ -1,9 +1,10 @@
 import React from "react";
+import "./Allocation.css"
 
 const Allocation = props => {
   return (
     <div className="allocation_wrapper">
-      Allocation component
+      Asset Allocation
       <div className="allocation_header">
         <ul>ASSET NAME</ul>
         <ul>TICKER</ul>
@@ -12,7 +13,7 @@ const Allocation = props => {
       <div className="allocation_container">
         <div className="us_equities_header">{props.US_Equities}</div>
         <div>US Equities(Total)</div>
-        <div>{props.Ticker_us}</div>
+        <div className="ticker_usa">{props.Ticker_usa}</div>
         <div>{props.Total}</div>
         <div>US Equities(Dividends)</div>
         <div>{props.Ticker_div}</div>
