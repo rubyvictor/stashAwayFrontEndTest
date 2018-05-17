@@ -12,18 +12,6 @@ class App extends Component {
     this.state = {
       portfolio: []
     };
-
-    // const portfolio_types = [
-    //   { type: "standard", returns: "6%", VaR: "3%", optimized: "USD" },
-    //   { type: "less_risky", returns: "3%", VaR: "1.5%", optimized: "JPY" },
-    //   { type: "more_risky", returns: "9%", VaR: "5%", optimized: "EUR" }
-    // ];
-
-    // const pf_types = [];
-    // portfolio_types.forEach(portfolio_type => {
-    //   console.log(portfolio_type);
-    //   pf_types.push(<p>portfolio type:{portfolio_type}</p>);
-    // });
   }
 
   async componentDidMount() {
@@ -34,31 +22,28 @@ class App extends Component {
         })
         .then(data => {
           console.log(data);
-          const obj = JSON.parse(data.json);
-          this.setState({ portfolio: obj.response.customer });
+          this.setState({ portfolio: data.Response.Customer });
         });
     } catch (err) {
       return Promise.reject(err);
     }
   }
 
-  // this.State({ portfolio: pf_types });
-  // console.log(this.state.portfolio)
 
   render() {
     return (
       <div className="App">
         <Header />
         {this.state.portfolio.map((element, i) => {
-          console.log(element);
+          console.log(element.currency_exposure.USD);
           return (
             <div>
               <RiskLevel
                 key={i}
-                type={element.type}
-                returns={element.returns}
+                type={element.portfolio_type}
+                returns={element.exp_returns}
                 risk={element.VaR}
-                optimized={element.optimized}
+                optimized={element.optimised_for}
               />
             </div>
           );
@@ -66,13 +51,13 @@ class App extends Component {
         {this.state.portfolio.map((element, i) => {
           return (
             <div>
-              <Composition key={i} currency={element.currency_exposure} />
+              <Composition key={i} USD={element.currency_exposure.USD} SGD={element.currency_exposure.SGD} EUR={element.currency_exposure.EUR} JPY={element.currency_exposure.JPY} Others={element.currency_exposure.Others} />
             </div>
           );
         })}
         {this.state.portfolio.map((element, i) => {
           return <div>
-              <Allocation key={i} Total={element.Total} Dividends={element.Dividends} Small_cap={element.Small_cap_growth} Mid_cap={element.Mid_cap_value} Convertible={element.Convertible_bonds} Asia={element.Asia_ex_japan} China={element.China_equities} US={element.US_total_stock} Bonds={element.Bonds}/>
+              <Allocation key={i} Total={element.Total.VTTI} Dividends={element.Dividends.VIG} Small_cap={element.Small_cap_growth.VBK} Mid_cap={element.Mid_cap_value.VOE} Convertible={element.Convertible_bonds.CWB} Asia={element.Asia_ex_japan.VTIT} China={element.China_equities.PGJ} US={element.US_total_stock.VTI} Bonds={element.Bonds.CBB}/>
             </div>;
         })}
       </div>

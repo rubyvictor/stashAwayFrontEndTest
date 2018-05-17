@@ -1,6 +1,6 @@
 import React from "react";
 
-const Composition = (props) => {
+const Composition = props => {
   return (
     <div>
       Composition component
@@ -8,27 +8,27 @@ const Composition = (props) => {
         <tbody>
           <tr>
             <td>
-              <p>{this.props.currency.USD}</p>
+              <p>{props.USD}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.currency.SGD}</p>
+              <p>{props.SGD}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.currency.EUR}</p>
+              <p>{props.EUR}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.currency.JPY}</p>
+              <p>{props.JPY}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.currency.Others}</p>
+              <p>{props.Others}</p>
             </td>
           </tr>
         </tbody>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Allocation = (props) => {
+const Allocation = props => {
   return (
     <div>
       Allocation component
@@ -8,42 +8,42 @@ const Allocation = (props) => {
         <tbody>
           <tr>
             <td>
-              <p>{this.props.Total}</p>
+              <p>{props.Total}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.Dividends}</p>
+              <p>{props.Dividends}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.Small_cap}</p>
+              <p>{props.Small_cap}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.Mid_cap}</p>
+              <p>{props.Mid_cap}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.Convertible}</p>
+              <p>{props.Convertible}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.China}</p>
+              <p>{props.China}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.US}</p>
+              <p>{props.US}</p>
             </td>
           </tr>
           <tr>
             <td>
-              <p>{this.props.Bonds}</p>
+              <p>{props.Bonds}</p>
             </td>
           </tr>
         </tbody>
