@@ -1,0 +1,50 @@
+.container {
+  background-color: #002243;
+  display: flex;
+  justify-content: flex;
+}
+.container_two {
+  background-color: #002243;
+  display: flex;
+  justify-content: flex;
+  flex-direction: column;
+}
+
+.stashaway {
+  margin-right: auto;
+}
+
+.container_two > div {
+  padding: 5px;
+  text-align: center;
+  font-size: 0.5em;
+  color: #ffffff;
+}
+
+.container_two .preview {
+  margin-top: 50px;
+  font-size: 0.75em
+}
+
+.container > div {
+  padding: 10px;
+  text-align: center;
+  font-size: 0.5em;
+  color: #ffffff;
+}
+
+.container > div:nth-child(1n) {
+  background-color: #002243;
+}
+
+.container > div:nth-child(3n) {
+  background-color: #002243;
+}
+
+.container > div:nth-child(2n) {
+  background-color: #002243;
+}
+
+.container > div:nth-child(4n) {
+  background-color: #002243;
+}

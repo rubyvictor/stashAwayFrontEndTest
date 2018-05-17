@@ -1,25 +1,19 @@
 import React from "react";
+import "./Header.css";
 
 const Header = () => {
   return (
-    <table className="App-header">
-      <thead>
-        <tr>
-          <th>StashAway</th>
-          <th className="topnav-right">
-            <ul>Support</ul>
-            <ul>Logout</ul>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Review your portfolio</td>
-          <td></td>
-          <td>You can always change this later.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div>
+      <div className="container">
+        <div className="stashaway">StashAway</div>
+        <div className="support">Support</div>
+        <div className="logout">Logout</div>
+      </div>
+      <div className="container_two">
+        <div className="preview">Preview your portfolio</div>
+        <div className="youcan">You can alway change this later</div>
+      </div>
+    </div>
   );
 };
 

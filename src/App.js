@@ -3,7 +3,7 @@ import Header from "../src/component/Header";
 import RiskLevel from "../src/component/RiskLevel";
 import Allocation from "../src/component/Allocation";
 import Composition from "../src/component/Composition";
-import "./App.css";
+// import "./App.css";
 
 class App extends Component {
   constructor(props) {
