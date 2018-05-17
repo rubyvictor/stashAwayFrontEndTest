@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {this.state.portfolio.map((element, i) => {
-          console.log(element.Allocation[0]);
+          console.log(element.Total);
           return (
             <div>
               <RiskLevel
@@ -57,7 +57,7 @@ class App extends Component {
         })}
         {this.state.portfolio.map((element, i) => {
           return <div>
-              <Allocation key={i} Total={element.Total.VTTI} Dividends={element.Dividends.VIG} Small_cap={element.Small_cap_growth.VBK} Mid_cap={element.Mid_cap_value.VOE} Convertible={element.Convertible_bonds.CWB} Asia={element.Asia_ex_japan.VTIT} China={element.China_equities.PGJ} US={element.US_total_stock.VTI} Bonds={element.Bonds.CBB}/>
+              <Allocation key={i} US_Equities={element.Allocation[0]} International_Equities={element.Allocation[1]} International_Bonds={element.Allocation[2]} Total={element.Total[1]} Dividends={element.Dividends[1]} Small_cap={element.Small_cap_growth[1]} Mid_cap={element.Mid_cap_value[1]} Convertible={element.Convertible_bonds[1]} Asia={element.Asia_ex_japan[1]} China={element.China_equities[1]} US={element.US_total_stock[1]} Bonds={element.Bonds[1]} Ticker_us={element.Total[0]} Ticker_div={element.Dividends[0]} Ticker_small={element.Small_cap_growth[0]} Ticker_mid={element.Mid_cap_value} Ticker_convert={element.Convertible_bonds[0]} Ticker_asia={element.Asia_ex_japan[0]} Ticker_china={element.China_equities[0]} Ticker_US={element.US_total_stock[0]}/>
             </div>;
         })}
       </div>
