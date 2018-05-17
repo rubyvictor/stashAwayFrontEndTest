@@ -1,7 +1,7 @@
 {
   "name": "stashaway_front_end",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "axios": "^0.18.0",
     "rc-progress": "^2.2.5",
