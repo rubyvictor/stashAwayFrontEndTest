@@ -35,7 +35,7 @@ class App extends Component {
       <div className="App">
         <Header />
         {this.state.portfolio.map((element, i) => {
-          console.log(element.currency_exposure.USD);
+          console.log(element.Allocation[0]);
           return (
             <div>
               <RiskLevel
