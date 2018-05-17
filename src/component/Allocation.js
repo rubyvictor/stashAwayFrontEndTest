@@ -1,5 +1,6 @@
 import React from "react";
-import "./Allocation.css"
+import "./Allocation.css";
+// import { Line } from "rc-progress";
 
 const Allocation = props => {
   return (
@@ -27,7 +28,9 @@ const Allocation = props => {
         <div>Convertible Bonds</div>
         <div>{props.Ticker_convert}</div>
         <div>{props.Convertible}</div>
-        <div className="Int_equities_header">{props.International_Equities}</div>
+        <div className="Int_equities_header">
+          {props.International_Equities}
+        </div>
         <div>Asian Ex-japan Equities</div>
         <div>{props.Ticker_asia}</div>
         <div>{props.Asia}</div>
