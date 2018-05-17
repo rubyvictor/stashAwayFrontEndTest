@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.stashaway {
+.header_stashaway {
   margin-right: auto;
 }
 
@@ -21,7 +21,7 @@
   color: #ffffff;
 }
 
-.container_two .preview {
+.container_two .header_preview {
   margin-top: 50px;
   font-size: 0.75em
 }

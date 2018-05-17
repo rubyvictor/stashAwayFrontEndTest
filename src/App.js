@@ -43,7 +43,7 @@ class App extends Component {
                 type={element.portfolio_type}
                 returns={element.exp_returns}
                 risk={element.VaR}
-                optimized={element.optimised_for}
+                optimized={element.Optimised_for}
               />
             </div>
           );

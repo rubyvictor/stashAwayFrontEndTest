@@ -1,0 +1,57 @@
+.risk_wrapper > p {
+    color: #002243
+}
+
+.risk_wrapper {
+  width: auto;
+  background: white;
+  padding: 25px;
+  margin: 25px;
+}
+
+.risk_container {
+  display: flex;
+  justify-content: center;
+}
+
+.risk_container > div {
+  padding-top: 50px;
+  text-align: center;
+  font-size: 0.5em;
+  color: #002243;
+}
+
+body {
+  text-align: center;
+  background: lightgray;
+}
+
+.risk_container_two {
+  display: flex;
+  justify-content: center;
+}
+
+.risk_container_two > div {
+  padding: 5px;
+  background-color: white;
+  text-align: center;
+  font-size: 1.2em;
+  color: lightgreen;
+  flex: 1;
+}
+
+.risk_container_two {
+  margin-top: 15px;
+  font-size: 1em;
+}
+
+.risk_container > div:nth-child(1n) {
+  flex: 2;
+  vertical-align: text-bottom;
+}
+
+.risk_container > div:nth-child(3n) {
+}
+
+.risk_container > div:nth-child(2n) {
+}

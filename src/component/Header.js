@@ -5,13 +5,13 @@ const Header = () => {
   return (
     <div>
       <div className="container">
-        <div className="stashaway">StashAway</div>
-        <div className="support">Support</div>
-        <div className="logout">Logout</div>
+        <div className="header_stashaway">StashAway</div>
+        <div className="header_support">Support</div>
+        <div className="header_logout">Logout</div>
       </div>
       <div className="container_two">
-        <div className="preview">Preview your portfolio</div>
-        <div className="youcan">You can alway change this later</div>
+        <div className="header_preview">Preview your portfolio</div>
+        <div className="header_youcan">You can alway change this later</div>
       </div>
     </div>
   );
