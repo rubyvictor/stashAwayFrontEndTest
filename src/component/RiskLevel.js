@@ -3,6 +3,7 @@ import "./RiskLevel.css";
 
 class RiskLevel extends Component {
   render() {
+
     return (
       <div className="risk_wrapper">
         <p>StashAway's {this.props.type} portfolio</p>
