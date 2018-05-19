@@ -23,9 +23,9 @@ class App extends Component {
         .then(data => {
           console.log(data)
           this.setState({ portfolio: data.Response.Current, newPf: data.Response.New });
-        });
+        }).catch(Promise.rejection);
     } catch (err) {
-      return Promise.reject(err);
+      throw err;
     }
   }
 
