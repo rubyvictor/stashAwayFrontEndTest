@@ -22,7 +22,7 @@ class App extends Component {
         })
         .then(data => {
           console.log(data)
-          this.setState({ portfolio: data.Response.Current, newPf: data.Response.New });
+          this.setState({ portfolio: data.response.standard, newPf: data.response.riskier });
         }).catch(Promise.rejection);
     } catch (err) {
       throw err;
@@ -32,7 +32,6 @@ class App extends Component {
 handleClick = () => {
   console.log("clicked", this.state)
   this.setState({toggle_On: !this.state.toggle_On})
-  this.state.portfolio
 }
 
 
@@ -42,8 +41,8 @@ handleClick = () => {
     return <div className="App">
         <Header />
 
-        {this.state.portfolio && <RiskLevel {...this.state.portfolio} />}
-        {this.state.portfolio && <Composition {...this.state.portfolio} />}
+        {this.state.portfolio && <RiskLevel {...this.state.portfolio}/>}
+      {this.state.portfolio && <Composition {...this.state.portfolio} onClick={this.handleClick}/>}
         </div>;
   }
 }
