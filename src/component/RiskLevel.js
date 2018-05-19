@@ -3,7 +3,7 @@ import "./RiskLevel.css";
 
 class RiskLevel extends Component {
   modifyDataToPercent = data => {
-    return (data*100).toFixed(2)+"%".toString();
+    return (data * 100).toFixed(2) + "%".toString();
   };
 
   render() {

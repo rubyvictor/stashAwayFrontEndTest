@@ -21,29 +21,36 @@ class App extends Component {
           return data.json();
         })
         .then(data => {
-          console.log(data)
-          this.setState({ portfolio: data.response.standard, newPf: data.response.riskier });
-        }).catch(Promise.rejection);
+          console.log("data is:", data);
+          this.setState({
+            portfolio: data.response.standard,
+            newPf: data.response.riskier
+          });
+        })
+        .catch(Promise.rejection);
     } catch (err) {
       throw err;
     }
   }
 
-handleClick = () => {
-  console.log("clicked", this.state)
-  this.setState({toggle_On: !this.state.toggle_On})
-}
-
-
+  handleClick = event => {
+    event.preventDefault();
+    console.log("clicked", this.state);
+    this.setState({ toggle_On: !this.state.toggle_On });
+  };
 
   render() {
-    console.log(this.state.portfolio)
-    return <div className="App">
+    console.log("rendering:", this.state.portfolio);
+    return (
+      <div className="App">
         <Header />
 
-        {this.state.portfolio && <RiskLevel {...this.state.portfolio}/>}
-      {this.state.portfolio && <Composition {...this.state.portfolio} onClick={this.handleClick}/>}
-        </div>;
+        {this.state.portfolio && <RiskLevel {...this.state.portfolio} />}
+        {this.state.portfolio && (
+          <Composition {...this.state.portfolio} onClick={this.handleClick} />
+        )}
+      </div>
+    );
   }
 }
 
