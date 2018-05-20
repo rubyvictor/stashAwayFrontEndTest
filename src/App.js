@@ -39,7 +39,7 @@ class App extends Component {
   };
 
   render() {
-    console.log("rendering:", this.state.portfolio);
+    console.log("rendering:", this.state.portfolio,"new",this.state.newPf);
     return (
       <div className="App">
         <Header />
