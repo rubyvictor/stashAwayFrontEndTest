@@ -3,6 +3,7 @@ import Header from "../src/component/Header";
 import RiskLevel from "../src/component/RiskLevel";
 import Allocation from "../src/component/Allocation";
 import Composition from "../src/component/Composition";
+import Button from "../src/component/Button";
 
 class App extends Component {
   constructor(props) {
@@ -34,21 +35,29 @@ class App extends Component {
   }
 
   handleClick = () => {
-    console.log("clicked"+ this.state);
+    console.log("clicked" + this.state.toggle_On);
     this.setState({ toggle_On: !this.state.toggle_On });
   };
 
   render() {
-    console.log("rendering:", this.state.portfolio,"new",this.state.newPf);
+    console.log("rendering:", this.state.portfolio, "new", this.state.newPf);
     return (
       <div className="App">
         <Header />
-
-        {this.state.portfolio && <RiskLevel {...this.state.portfolio} />}
-        {this.state.portfolio && (
-          <Composition {...this.state.portfolio} onClick={this.handleClick} />
+        <Button onClick={this.handleClick} />
+        {this.state.toggle_On ? (
+          <div>
+            {this.state.portfolio && <RiskLevel {...this.state.portfolio} />}
+            {this.state.portfolio && <Composition {...this.state.portfolio} />}
+            {this.state.portfolio && <Allocation {...this.state.portfolio} />}
+          </div>
+        ) : (
+          <div>
+            {this.state.newPf && <RiskLevel {...this.state.newPf} />}
+            {this.state.newPf && <Composition {...this.state.newPf} />}
+            {this.state.newPf && <Allocation {...this.state.newPf} />}
+          </div>
         )}
-        {this.state.portfolio && <Allocation {...this.state.portfolio}/>}
       </div>
     );
   }

@@ -8,7 +8,6 @@ const Composition = props => {
 
   return (
     <div className="composition_wrapper">
-      <button onClick={props.handleClick}>new</button>
       <p id="composition_title">Portfolio Composition</p>
       <p id="composition_subtitle">Global Currency Exposure</p>
       <div className="composition_container">
