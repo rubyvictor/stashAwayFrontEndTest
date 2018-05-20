@@ -23,8 +23,8 @@ class App extends Component {
         .then(data => {
           console.log("data is:", data);
           this.setState({
-            portfolio: data.response.standard,
-            newPf: data.response.riskier
+            portfolio: data.portfolios.current,
+            newPf: data.portfolios.new
           });
         })
         .catch(Promise.rejection);
@@ -33,9 +33,8 @@ class App extends Component {
     }
   }
 
-  handleClick = event => {
-    event.preventDefault();
-    console.log("clicked", this.state);
+  handleClick = () => {
+    console.log("clicked"+ this.state);
     this.setState({ toggle_On: !this.state.toggle_On });
   };
 
@@ -49,6 +48,7 @@ class App extends Component {
         {this.state.portfolio && (
           <Composition {...this.state.portfolio} onClick={this.handleClick} />
         )}
+        {this.state.portfolio && <Allocation {...this.state.portfolio}/>}
       </div>
     );
   }
